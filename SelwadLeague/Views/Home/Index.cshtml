@@ -1,0 +1,271 @@
+﻿<section class="hero">
+    <div class="wrap hero-content">
+        <div>
+            <div class="kicker" style="display: none">SELWAD LEAGUE • الموسم الحالي</div>
+            <h1>دوري سلواد<br><span>لكرة القدم</span></h1>
+            <p>كل ما يخص الدوري في مكان واحد: المباريات، النتائج، الهدافون، الفرق، والأخبار.</p>
+            <div class="actions">
+                <a class="btn primary" href="#matches">المباريات</a>
+                <a class="btn secondary" href="#table">جدول الترتيب</a>
+            </div>
+        </div>
+        <div class="next-match" >
+            <div class="nm-head">⚽ المباراة القادمة</div>
+            <div class="nm-body">
+                <div class="nm-team"><div class="crest">C</div>راس بركة</div>
+                <div class="nm-vs">VS</div>
+                <div class="nm-team"><div class="crest">F</div>عيون الحرامية</div>
+            </div>
+            <div class="nm-foot">الجولة الأولى</div>
+        </div>
+    </div>
+</section>
+
+
+<section id="matches">
+    <div class="wrap">
+        <div class="section-head"><div><h2>⚽ المباريات والنتائج</h2><p id="roundSub">اختر الجولة</p></div></div>
+        <div class="rounds" id="rounds" role="tablist" aria-label="الجولات"></div>
+        <div class="grid matches" id="roundMatches"></div>
+    </div>
+</section>
+
+<section id="table">
+    <div class="wrap">
+        <div class="section-head"><div><h2>🏆 جدول الترتيب</h2><p>قبل انطلاق المباريات</p></div></div>
+        <div class="card">
+            <table class="table">
+                <thead><tr><th>الفريق</th><th>لعب</th><th>ف</th><th>ت</th><th>خ</th><th>نقاط</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="pos">1</span>راس بركة</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">2</span>الفدائي</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">3</span>تل العاصور</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">4</span>وادي النمر</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">5</span>راس علي</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">6</span>عيون الحرامية</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">7</span>دوار الشهيد</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                    <tr><td><span class="pos">8</span>الحواكير</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr>
+                </tbody>
+            </table>
+            <div class="legend"><span><i style="background:var(--green)"></i>المتصدر</span><span><i style="background:var(--cyan)"></i>المراكز الثلاثة الأولى</span><span><i style="background:var(--magenta)"></i>المركز الأخير</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="scorers">
+    <div class="wrap">
+        <div class="section-head"><div><h2>🥅 الهدافون</h2><p>تُحدّث القائمة بعد تسجيل النتائج</p></div></div>
+        <div class="card scorers-card">
+            <div class="sc-head"><span>#</span><span>اللاعب</span><span>الفريق</span><span>الأهداف</span></div>
+            <ol class="sc-list" id="scorerList"></ol>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="gallery">
+    <div class="wrap">
+        <div class="slider" aria-roledescription="carousel" aria-label="صور الدوري">
+            <div class="slides">
+                <figure class="slide" style="--img:url('/images/slides/1.jpg')"><figcaption><strong>الجولة الأولى تقترب</strong><span>راس بركة وعيون الحرامية في افتتاح الموسم</span></figcaption></figure>
+                <figure class="slide" style="--img:url('/images/slides/2.jpg')"><figcaption><strong>أجواء الدوري</strong><span>جماهير سلواد خلف فرقها</span></figcaption></figure>
+                <figure class="slide" style="--img:url('/images/slides/3.jpg')"><figcaption><strong>صفقة الموسم</strong><span>الفدائي يعلن التعاقد مع وليد حمدان</span></figcaption></figure>
+                <figure class="slide" style="--img:url('/images/slides/4.jpg')"><figcaption><strong>ثمانية فرق، لقب واحد</strong><span>من سيرفع الكأس هذا الموسم؟</span></figcaption></figure>
+            </div>
+            <button class="slider-btn next" type="button" aria-label="التالي">‹</button>
+            <button class="slider-btn prev" type="button" aria-label="السابق">›</button>
+            <div class="dots"></div>
+        </div>
+    </div>
+</section>
+
+<section id="teams">
+    <div class="wrap">
+        <div class="section-head"><div><h2>🛡️ الفرق</h2><p>اضغط على أي فريق لعرض لاعبيه</p></div></div>
+        <div class="grid teams">
+            <button type="button" class="card team-card" data-team="A"><div class="crest">A</div><h3>تل العاصور</h3><span class="team-code">A</span></button>
+            <button type="button" class="card team-card" data-team="B"><div class="crest">B</div><h3>الفدائي</h3><span class="team-code">B</span></button>
+            <button type="button" class="card team-card" data-team="C"><div class="crest">C</div><h3>راس بركة</h3><span class="team-code">C</span></button>
+            <button type="button" class="card team-card" data-team="D"><div class="crest">D</div><h3>وادي النمر</h3><span class="team-code">D</span></button>
+            <button type="button" class="card team-card" data-team="E"><div class="crest">E</div><h3>راس علي</h3><span class="team-code">E</span></button>
+            <button type="button" class="card team-card" data-team="F"><div class="crest">F</div><h3>عيون الحرامية</h3><span class="team-code">F</span></button>
+            <button type="button" class="card team-card" data-team="G"><div class="crest">G</div><h3>دوار الشهيد</h3><span class="team-code">G</span></button>
+            <button type="button" class="card team-card" data-team="H"><div class="crest">H</div><h3>الحواكير</h3><span class="team-code">H</span></button>
+        </div>
+    </div>
+</section>
+
+<dialog id="teamDialog" class="team-dialog" aria-labelledby="tdName">
+    <div class="td-head">
+        <div class="crest" id="tdCrest"></div>
+        <div><h3 id="tdName"></h3><span id="tdCount"></span></div>
+        <button type="button" class="td-close" id="tdClose" aria-label="إغلاق">✕</button>
+    </div>
+    <ol class="td-players" id="tdPlayers"></ol>
+</dialog>
+
+
+
+
+
+<section id="predictions" style="display: none">
+    <div class="wrap">
+        <div class="section-head"><div><h2>🎯 التوقعات</h2><p>شارك بتوقعاتك في دوري سلواد</p></div><span class="tag">تحدي الجولة</span></div>
+        <div class="grid predictions">
+            <div class="card prediction-card"><h3>توقع مباراة الجولة الأولى</h3><p>راس بركة × عيون الحرامية</p><div class="score-form"><input class="score-input" type="number" min="0" placeholder="0" aria-label="أهداف راس بركة"><strong>—</strong><input class="score-input" type="number" min="0" placeholder="0" aria-label="أهداف عيون الحرامية"></div><button class="submit-btn" type="button" onclick="alert('تم تسجيل واجهة التوقع. الحفظ التلقائي يحتاج ربط الموقع بخدمة تخزين خارجية.')">إرسال التوقع</button><div class="prediction-note">واجهة التوقع جاهزة. الحفظ الفعلي للمشاركات يحتاج قاعدة بيانات أو خدمة نماذج خارجية.</div></div>
+            <div class="card prediction-card"><h3>نظام احتساب النقاط</h3><div class="points"><div><b>6 نقاط</b> — توقع النتيجة كاملة بشكل صحيح.</div><div><b>3 نقاط</b> — توقع الفائز أو التعادل.</div><div><b>+1 نقطة</b> — إصابة عدد أهداف أحد الفريقين.</div></div><div class="prediction-note">تُغلق التوقعات قبل انطلاق الجولة، ثم تُحدّث النقاط بعد اعتماد النتائج.</div></div>
+            <div class="card prediction-card">
+                <h3>🏆 تحدي الجولة الأولى</h3><p>من سيكون الفريق الأبرز في الجولة الأولى؟</p><div class="challenge">
+                    <label><input type="radio" name="challenge"> تل العاصور</label><label><input type="radio" name="challenge"> الفدائي</label><label><input type="radio" name="challenge"> راس بركة</label><label><input type="radio" name="challenge"> وادي النمر</label><label><input type="radio" name="challenge"> راس علي</label><label><input type="radio" name="challenge"> عيون الحرامية</label><label><input type="radio" name="challenge"> دوار الشهيد</label><label><input type="radio" name="challenge"> الحواكير</label>
+                </div>
+            </div>
+            <div class="card prediction-card"><h3>📊 ترتيب المشاركين</h3><p>سيظهر ترتيب المشاركين ونقاطهم بعد بدء احتساب التوقعات.</p><div class="prediction-note">يمكن ربط هذا القسم لاحقًا بقاعدة بيانات لتحديثه تلقائيًا.</div></div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // رموز الفرق
+    var TEAMS = {
+        A: "تل العاصور", B: "الفدائي", C: "راس بركة", D: "وادي النمر",
+        E: "راس علي", F: "عيون الحرامية", G: "دوار الشهيد", H: "الحواكير"
+    };
+
+    // لكل جولة: ["الفريق1", "الفريق2"] أو مع النتيجة ["C", "F", 2, 1]
+    // var ROUNDS = [
+    //     //[["C","F",2,1], ["H","A"], ["E","D"], ["B","G"]],  // الجولة 1
+    //     [["C","F"], ["H","A"], ["E","D"], ["B","G"]],  // الجولة 1
+    //     [],  // الجولة 2
+    //     [],  // الجولة 3
+    //     [],  // الجولة 4
+    //     [],  // الجولة 5
+    //     [],  // الجولة 6
+    //     []   // الجولة 7
+    // ];
+    var ROUNDS = [
+        [["A","H"], ["B","G"], ["C","F"], ["D","E"]],  // الجولة 1
+        [["A","G"], ["H","F"], ["B","E"], ["C","D"]],  // الجولة 2
+        [["A","F"], ["G","E"], ["H","D"], ["B","C"]],  // الجولة 3
+        [["A","E"], ["F","D"], ["G","C"], ["H","B"]],  // الجولة 4
+        [["A","D"], ["E","C"], ["F","B"], ["G","H"]],  // الجولة 5
+        [["A","C"], ["D","B"], ["E","H"], ["F","G"]],  // الجولة 6
+        [["A","B"], ["C","H"], ["D","G"], ["E","F"]]   // الجولة 7
+    ];
+
+    (function () {
+        var tabs = document.getElementById('rounds');
+        var box = document.getElementById('roundMatches');
+        var sub = document.getElementById('roundSub');
+
+        function card(m) {
+            var played = m.length > 2;
+            var score = played ? m[2] + ' - ' + m[3] : '—';
+            return '<div class="card match">' +
+                '<div class="team"><div class="crest">' + m[0] + '</div>' + TEAMS[m[0]] + '</div>' +
+                '<div class="vs">' + (played ? 'انتهت' : 'ضد') + '<br><span class="score">' + score + '</span></div>' +
+                '<div class="team"><div class="crest">' + m[1] + '</div>' + TEAMS[m[1]] + '</div></div>';
+        }
+
+        function show(n) {
+            var list = ROUNDS[n];
+            box.innerHTML = list.length
+                ? list.map(card).join('')
+                : '<div class="card empty" style="grid-column:1/-1"><span class="empty-ico">📅</span>لم تُعلن مباريات هذه الجولة بعد</div>';
+            sub.textContent = 'الجولة ' + (n + 1);
+            [].forEach.call(tabs.children, function (b, k) {
+                b.classList.toggle('on', k === n);
+                b.setAttribute('aria-selected', k === n);
+            });
+        }
+
+        ROUNDS.forEach(function (_, n) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.setAttribute('role', 'tab');
+            b.textContent = 'الجولة ' + (n + 1);
+            b.onclick = function () { show(n); };
+            tabs.appendChild(b);
+        });
+
+        // افتح آخر جولة فيها نتائج، وإلا الأولى
+        var start = 0;
+        ROUNDS.forEach(function (r, n) { if (r.some(function (m) { return m.length > 2; })) start = n; });
+        show(start);
+    })();
+        // أسماء اللاعبين: بدّل الأسماء التجريبية بالأسماء الحقيقية
+    var PLAYERS = {
+        A: [],
+        B: ["وليد حمدان"],
+        C: ["نصر الله عز نصر الله عبدالرزاق", "محمد عبدالكريم موسى مصطفى", "رامي نائل عيسى الباشا", "عبدالرؤوف عبدالعزيز عبدالرؤوف عواد", "محمد عز نصر الله عبدالرزاق", "محمد رقم 8 قرايب صالح", "أحمد هشام", "معتو هشام"],
+        D: [], 
+        E: [], 
+        F: [], 
+        G: [], 
+        H: []
+    };
+
+    (function () {
+        var dlg = document.getElementById('teamDialog');
+        var list = document.getElementById('tdPlayers');
+
+        document.querySelectorAll('.team-card[data-team]').forEach(function (card) {
+            card.addEventListener('click', function () {
+                var code = card.dataset.team;
+                var players = PLAYERS[code] || [];
+                document.getElementById('tdCrest').textContent = code;
+                document.getElementById('tdName').textContent = card.querySelector('h3').textContent;
+                document.getElementById('tdCount').textContent = players.length ? players.length + ' لاعب' : '';
+                list.innerHTML = players.length
+                    ? players.map(function (p) { return '<li>' + p + '</li>'; }).join('')
+                    : '<li class="td-empty">لم تُضف قائمة اللاعبين بعد</li>';
+                dlg.showModal();
+            });
+        });
+
+    function closeDlg() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { dlg.close(); return; }
+        dlg.classList.add('closing');
+        dlg.addEventListener('animationend', function done(e) {
+            if (e.target !== dlg) return;
+            dlg.removeEventListener('animationend', done);
+            dlg.classList.remove('closing');
+            dlg.close();
+        });
+    }
+    document.getElementById('tdClose').onclick = closeDlg;
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) closeDlg(); });
+    dlg.addEventListener('cancel', function (e) { e.preventDefault(); closeDlg(); }); // زر Esc
+    })();
+    // الهدافون: ["اسم اللاعب", "رمز الفريق", عدد الأهداف]
+    // الأسماء تجريبية، بدّلها بالحقيقية. اتركها [] لو ما في أهداف بعد.
+    var SCORERS = [
+        ["لاعب 1", "B", 3],
+        ["لاعب 2", "C", 2],
+        ["لاعب 3", "A", 2],
+        ["لاعب 4", "F", 1]
+    ];
+
+    (function () {
+        var names = (typeof TEAMS !== 'undefined') ? TEAMS : {
+            A: "تل العاصور", B: "الفدائي", C: "راس بركة", D: "وادي النمر",
+            E: "راس علي", F: "عيون الحرامية", G: "دوار الشهيد", H: "الحواكير"
+        };
+        var list = document.getElementById('scorerList');
+        var data = SCORERS.slice().sort(function (a, b) { return b[2] - a[2] || a[0].localeCompare(b[0], 'ar'); });
+
+        if (!data.length) {
+            list.innerHTML = '<li class="sc-empty">لم تُسجّل أهداف بعد</li>';
+            return;
+        }
+
+        var rank = 0, prev = null;
+        list.innerHTML = data.map(function (p, i) {
+            if (p[2] !== prev) { rank = i + 1; prev = p[2]; }   // نفس عدد الأهداف = نفس المركز
+            return '<li class="sc-row">' +
+                '<span class="sc-rank">' + rank + '</span>' +
+                '<strong>' + p[0] + '</strong>' +
+                '<span class="sc-team">' + (names[p[1]] || p[1]) + '</span>' +
+                '<b class="sc-goals">' + p[2] + '</b></li>';
+        }).join('');
+    })();
+</script>
