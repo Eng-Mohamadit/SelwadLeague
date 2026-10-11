@@ -1,4 +1,222 @@
-﻿<section class="hero">
+﻿<style>
+
+    /* Predictions List */
+    #predictionsList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    .prediction-item {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 14px;
+        background: var(--card-bg, rgba(128, 128, 128, 0.04));
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .prediction-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        }
+
+    .prediction-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .prediction-user {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        min-width: 0;
+    }
+
+    .prediction-avatar {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(37, 99, 235, 0.12);
+        font-size: 18px;
+    }
+
+    .prediction-user-name {
+        font-weight: 800;
+        overflow-wrap: anywhere;
+    }
+
+    .prediction-round {
+        font-size: 12px;
+        opacity: 0.7;
+        margin-top: 3px;
+    }
+
+    .prediction-match {
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.7;
+        padding: 12px 8px;
+        border-radius: 10px;
+        background: rgba(128, 128, 128, 0.07);
+    }
+
+    .prediction-score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .prediction-score-number {
+        min-width: 48px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        background: rgba(37, 99, 235, 0.1);
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+    }
+
+    .prediction-score-separator {
+        font-weight: 800;
+        opacity: 0.6;
+    }
+
+    .prediction-delete {
+        width: 100%;
+        padding: 9px 12px;
+        border: 1px solid rgba(220, 38, 38, 0.25);
+        border-radius: 9px;
+        background: rgba(220, 38, 38, 0.07);
+        color: #dc2626;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+        .prediction-delete:hover {
+            background: rgba(220, 38, 38, 0.15);
+        }
+
+    .predictions-empty {
+        grid-column: 1 / -1;
+        padding: 30px 15px;
+        text-align: center;
+        border: 1px dashed rgba(128, 128, 128, 0.35);
+        border-radius: 12px;
+        opacity: 0.75;
+    }
+
+    @@media (max-width: 500px) {
+        #predictionsList
+
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .prediction-item {
+        padding: 15px;
+    }
+
+    }
+
+
+    .prediction-card {
+        padding: 24px;
+    }
+
+    .pred-field {
+        margin-bottom: 20px;
+    }
+
+        .pred-field label,
+        .pred-score-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .pred-field input,
+        .pred-field select,
+        .pred-score-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font: inherit;
+            box-sizing: border-box;
+        }
+
+    .pred-score-form {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: end;
+        gap: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+        .pred-score-form strong {
+            padding-bottom: 12px;
+        }
+
+    .prediction-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+    }
+
+        .prediction-item:last-child {
+            border-bottom: none;
+        }
+
+        .prediction-item p {
+            margin: 5px 0;
+        }
+
+    .prediction-result {
+        font-size: 18px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .prediction-item .submit-btn {
+        flex-shrink: 0;
+    }
+
+    @@media (max-width: 500px) {
+        .prediction-card
+
+    {
+        padding: 16px;
+    }
+
+    .pred-score-form {
+        gap: 8px;
+    }
+
+    .prediction-item {
+        flex-wrap: wrap;
+    }
+
+    }
+</style>
+<section class="hero">
     <div class="wrap hero-content">
         <div>
             <div class="kicker" style="display: none">SELWAD LEAGUE • الموسم الحالي</div>
@@ -150,22 +368,71 @@
 </dialog>
 
 
-
-<section id="predictions" style="display: none">
+<section id="predictions">
     <div class="wrap">
-        <div class="section-head"><div><h2>🎯 التوقعات</h2><p>شارك بتوقعاتك في دوري سلواد</p></div><span class="tag">تحدي الجولة</span></div>
-        <div class="grid predictions">
-            <div class="card prediction-card"><h3>توقع مباراة الجولة الأولى</h3><p>راس بركة × عيون الحرامية</p><div class="score-form"><input class="score-input" type="number" min="0" placeholder="0" aria-label="أهداف راس بركة"><strong>—</strong><input class="score-input" type="number" min="0" placeholder="0" aria-label="أهداف عيون الحرامية"></div><button class="submit-btn" type="button" onclick="alert('تم تسجيل واجهة التوقع. الحفظ التلقائي يحتاج ربط الموقع بخدمة تخزين خارجية.')">إرسال التوقع</button><div class="prediction-note">واجهة التوقع جاهزة. الحفظ الفعلي للمشاركات يحتاج قاعدة بيانات أو خدمة نماذج خارجية.</div></div>
-            <div class="card prediction-card"><h3>نظام احتساب النقاط</h3><div class="points"><div><b>6 نقاط</b> — توقع النتيجة كاملة بشكل صحيح.</div><div><b>3 نقاط</b> — توقع الفائز أو التعادل.</div><div><b>+1 نقطة</b> — إصابة عدد أهداف أحد الفريقين.</div></div><div class="prediction-note">تُغلق التوقعات قبل انطلاق الجولة، ثم تُحدّث النقاط بعد اعتماد النتائج.</div></div>
-            <div class="card prediction-card">
-                <h3>🏆 تحدي الجولة الأولى</h3><p>من سيكون الفريق الأبرز في الجولة الأولى؟</p><div class="challenge">
-                    <label><input type="radio" name="challenge"> تل العاصور</label><label><input type="radio" name="challenge"> الفدائي</label><label><input type="radio" name="challenge"> راس بركة</label><label><input type="radio" name="challenge"> وادي النمر</label><label><input type="radio" name="challenge"> راس علي</label><label><input type="radio" name="challenge"> عيون الحرامية</label><label><input type="radio" name="challenge"> دوار الشهيد</label><label><input type="radio" name="challenge"> الحواكير</label>
-                </div>
+        <div class="section-head">
+            <div>
+                <h2>🎯 توقعات المباريات</h2>
+                <p>أدخل اسمك، اختر المباراة، وسجّل توقعك</p>
             </div>
-            <div class="card prediction-card"><h3>📊 ترتيب المشاركين</h3><p>سيظهر ترتيب المشاركين ونقاطهم بعد بدء احتساب التوقعات.</p><div class="prediction-note">يمكن ربط هذا القسم لاحقًا بقاعدة بيانات لتحديثه تلقائيًا.</div></div>
+        </div>
+
+        <!-- نموذج إضافة التوقع -->
+        <div class="card prediction-card">
+            <form id="predictionForm">
+                <div class="pred-field">
+                    <label for="predictorName">اسم الشخص</label>
+                    <input type="text"
+                           id="predictorName"
+                           placeholder="أدخل اسمك"
+                           maxlength="50"
+                           required>
+                </div>
+                <div class="pred-field">
+                    <label for="matchSelect">المباراة</label>
+                    <select id="matchSelect" required>
+                        <option value="">اختر المباراة</option>
+                    </select>
+                </div>
+                <div class="pred-score-form">
+                    <div>
+                        <label id="homeTeamLabel">الفريق الأول</label>
+                        <input type="number"
+                               id="homeScore"
+                               min="0"
+                               max="99"
+                               required
+                               placeholder="0">
+                    </div>
+                    <strong>VS</strong>
+                    <div>
+                        <label id="awayTeamLabel">الفريق الثاني</label>
+                        <input type="number"
+                               id="awayScore"
+                               min="0"
+                               max="99"
+                               required
+                               placeholder="0">
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    إضافة التوقع
+                </button>
+            </form>
+        </div>
+
+        <!-- قائمة التوقعات -->
+        <div class="card prediction-card" style="margin-top:20px">
+            <h3>📋 قائمة التوقعات</h3>
+
+            <div id="predictionsList">
+                <p>لا توجد توقعات حتى الآن.</p>
+            </div>
         </div>
     </div>
 </section>
+
+
 
 
 <script>
@@ -373,4 +640,305 @@
                 '<b class="sc-goals">' + p[2] + '</b></li>';
         }).join('');
     })();
+</script>
+
+<script>
+
+    (function () {
+        const select = document.getElementById("matchSelect");
+        const form = document.getElementById("predictionForm");
+        const list = document.getElementById("predictionsList");
+
+        const nameInput = document.getElementById("predictorName");
+        const homeScoreInput = document.getElementById("homeScore");
+        const awayScoreInput = document.getElementById("awayScore");
+
+        const homeTeamLabel = document.getElementById("homeTeamLabel");
+        const awayTeamLabel = document.getElementById("awayTeamLabel");
+
+        const STORAGE_KEY = "selwadPredictions";
+        // حذف جميع التوقعات المحفوظة
+        //localStorage.removeItem(STORAGE_KEY);
+
+        // تعبئة قائمة المباريات من جميع الجولات
+         // عرض مباريات الجولة الثانية فقط
+        const roundIndex = 1; 
+        if (ROUNDS[roundIndex]) {
+            ROUNDS[roundIndex].forEach((match, matchIndex) => {
+                const option = document.createElement("option");
+
+                option.value = `${roundIndex}-${matchIndex}`;
+                option.textContent =
+                    `الجولة 2: ${TEAMS[match[0]]} × ${TEAMS[match[1]]}`;
+
+                select.appendChild(option);
+            });
+        }
+
+
+        // قراءة التوقعات المحفوظة
+        function loadPredictions() {
+            try {
+                const saved = JSON.parse(
+                    localStorage.getItem(STORAGE_KEY) || "[]"
+                );
+
+                return Array.isArray(saved) ? saved : [];
+            } catch {
+                return [];
+            }
+        }
+
+        let predictions = loadPredictions();
+
+        // حفظ التوقعات
+        function savePredictions() {
+            try {
+                localStorage.setItem(
+                    STORAGE_KEY,
+                    JSON.stringify(predictions)
+                );
+
+                return true;
+            } catch {
+                alert("تعذّر حفظ التوقعات في المتصفح.");
+                return false;
+            }
+        }
+
+        // عرض قائمة التوقعات
+        function renderPredictions() {
+            list.replaceChildren();
+
+            if (predictions.length === 0) {
+                const emptyMessage = document.createElement("div");
+                emptyMessage.className = "predictions-empty";
+                emptyMessage.textContent = "⚽ لا توجد توقعات حتى الآن، كن أول من يتوقع!";
+                list.appendChild(emptyMessage);
+                return;
+            }
+
+            // عرض أحدث التوقعات أولاً
+            predictions.forEach((prediction, index) => {
+                const item = document.createElement("div");
+                item.className = "prediction-item";
+
+                // القسم العلوي: اسم الشخص والجولة
+                const top = document.createElement("div");
+                top.className = "prediction-top";
+
+                const user = document.createElement("div");
+                user.className = "prediction-user";
+
+                const avatar = document.createElement("div");
+                avatar.className = "prediction-avatar";
+                avatar.textContent = "👤";
+
+                const userDetails = document.createElement("div");
+
+                const userName = document.createElement("div");
+                userName.className = "prediction-user-name";
+                userName.textContent = prediction.name || "غير معروف";
+
+                const round = document.createElement("div");
+                round.className = "prediction-round";
+                round.textContent = `الجولة ${prediction.round}`;
+
+                userDetails.append(userName, round);
+                user.append(avatar, userDetails);
+                top.appendChild(user);
+
+                // اسم المباراة
+                const match = document.createElement("div");
+                match.className = "prediction-match";
+                match.textContent = prediction.match;
+
+                // النتيجة المتوقعة
+                const score = document.createElement("div");
+                score.className = "prediction-score";
+
+                const homeScore = document.createElement("span");
+                homeScore.className = "prediction-score-number";
+                homeScore.textContent = prediction.homeScore;
+
+                const separator = document.createElement("span");
+                separator.className = "prediction-score-separator";
+                separator.textContent = ":";
+
+                const awayScore = document.createElement("span");
+                awayScore.className = "prediction-score-number";
+                awayScore.textContent = prediction.awayScore;
+
+                score.append(homeScore, separator, awayScore);
+
+                // زر الحذف: UI فقط بدون وظيفة
+                const remove = document.createElement("button");
+                remove.type = "button";
+                remove.className = "prediction-delete";
+                //remove.textContent = "🗑️ حذف التوقع";
+
+                // تجميع عناصر التوقع
+                item.append(top, match, score, remove);
+                list.appendChild(item);
+            });
+        }
+
+
+        // تحديث أسماء الفرق عند اختيار المباراة
+        select.addEventListener("change", function () {
+            if (!select.value) {
+                homeTeamLabel.textContent = "الفريق الأول";
+                awayTeamLabel.textContent = "الفريق الثاني";
+                return;
+            }
+
+            const [roundIndex, matchIndex] =
+                select.value.split("-").map(Number);
+
+            const match = ROUNDS[roundIndex]?.[matchIndex];
+
+            homeTeamLabel.textContent =
+                match ? TEAMS[match[0]] : "الفريق الأول";
+
+            awayTeamLabel.textContent =
+                match ? TEAMS[match[1]] : "الفريق الثاني";
+        });
+
+        // إضافة توقع جديد
+        form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const predictorName = nameInput.value.trim();
+        const selectedMatch = select.value;
+
+        const homeRaw = homeScoreInput.value;
+        const awayRaw = awayScoreInput.value;
+
+        const homeScore = Number(homeRaw);
+        const awayScore = Number(awayRaw);
+
+        // التحقق من الاسم
+        if (!predictorName) {
+            Swal.fire({
+                icon: "warning",
+                title: "الاسم مطلوب",
+                text: "يرجى إدخال اسمك قبل إرسال التوقع.",
+                confirmButtonText: "حسناً",
+                confirmButtonColor: "#d97706"
+            });
+
+            nameInput.focus();
+            return;
+        }
+
+        // التحقق من اختيار المباراة
+        if (!selectedMatch) {
+            Swal.fire({
+                icon: "warning",
+                title: "اختر المباراة",
+                text: "يرجى اختيار المباراة التي تريد توقع نتيجتها.",
+                confirmButtonText: "حسناً",
+                confirmButtonColor: "#d97706"
+            });
+
+            select.focus();
+            return;
+        }
+
+        const [roundIndex, matchIndex] =
+            selectedMatch.split("-").map(Number);
+
+        const match = ROUNDS[roundIndex]?.[matchIndex];
+
+        // التحقق من صحة النتيجة
+        if (
+            !match ||
+            homeRaw === "" ||
+            awayRaw === "" ||
+            !Number.isInteger(homeScore) ||
+            !Number.isInteger(awayScore) ||
+            homeScore < 0 ||
+            awayScore < 0 ||
+            homeScore > 99 ||
+            awayScore > 99
+        ) {
+            Swal.fire({
+                icon: "warning",
+                title: "نتيجة غير صحيحة",
+                text: "يرجى إدخال نتيجة صحيحة من 0 إلى 99.",
+                confirmButtonText: "حسناً",
+                confirmButtonColor: "#d97706"
+            });
+
+            return;
+        }
+
+        // اسم المباراة
+        const matchName =
+            `${TEAMS[match[0]]} × ${TEAMS[match[1]]}`;
+
+        // منع تكرار توقع الشخص لنفس المباراة
+        const alreadyPredicted = predictions.some(prediction =>
+            (prediction.name || "").trim().toLowerCase() ===
+                predictorName.toLowerCase() &&
+            prediction.match === matchName
+        );
+
+        if (alreadyPredicted) {
+            Swal.fire({
+                icon: "warning",
+                title: "لقد سجلت توقعك مسبقاً",
+                text: "لا يمكنك توقع نفس المباراة أكثر من مرة.",
+                confirmButtonText: "حسناً",
+                confirmButtonColor: "#d97706"
+            });
+
+            return;
+        }
+
+        // إنشاء التوقع الجديد
+        const newPrediction = {
+            name: predictorName,
+            match: matchName,
+            round: roundIndex + 1,
+            homeScore: homeScore,
+            awayScore: awayScore
+        };
+
+        predictions.push(newPrediction);
+
+        // حفظ التوقع
+        if (!savePredictions()) {
+            predictions.pop();
+            return;
+        }
+
+
+        // تحديث قائمة التوقعات
+        renderPredictions();
+
+        // رسالة نجاح
+        Swal.fire({
+            icon: "success",
+            title: "تم إرسال توقعك بنجاح",
+            text: "بالتوفيق في توقعاتك! ⚽",
+            confirmButtonText: "تمام",
+            confirmButtonColor: "#16a34a",
+            timer: 2500,
+            timerProgressBar: true,
+            customClass: {
+                popup: "prediction-success-popup"
+            }
+        });
+
+        // مسح النتيجة بعد الإرسال
+        homeScoreInput.value = "";
+        awayScoreInput.value = "";
+    });
+
+
+        // عرض التوقعات عند فتح الصفحة
+        renderPredictions();
+    })();
+
 </script>
