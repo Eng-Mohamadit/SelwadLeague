@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        .team-rank-item {
+            cursor: pointer;
+        }
+
+            .team-rank-item .team-rank-select {
+                cursor: pointer;
+            }
         .team-rank-select {
             background: transparent;
             border: none;
@@ -530,10 +537,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fa-solid fa-calendar-days" style="color:var(--accent-gold)"></i> اختر الجولة</label>
-                    <select class="form-control">
-                        <option>الجولة الأولى</option>
-                        <option>الجولة الثانية</option>
+                    <label>
+                        <i class="fa-solid fa-calendar-days" style="color:var(--accent-gold)"></i>
+                        اختر الجولة
+                    </label>
+                    <select class="form-control" id="predictionRound">
+                        <option value="1">الجولة الأولى</option>
+                        <option value="2">الجولة الثانية</option>
+                        <option value="3">الجولة الثالثة</option>
+                        <option value="4">الجولة الرابعة</option>
+                        <option value="5">الجولة الخامسة</option>
+                        <option value="6">الجولة السادسة</option>
+                        <option value="7">الجولة السابعة</option>
                     </select>
                 </div>
             </div>
@@ -549,200 +564,164 @@
                         <input type="text" class="form-control" placeholder="اكتب اسم اللاعب">
                     </div>
                     <div class="sub-box">
-                        <h3><i class="fa-solid fa-list-ol" style="color:var(--accent-gold)"></i> الترتيب النهائي للفرق</h3>
-                        <p>رتب الفرق الثمانية من الأول إلى الثامن</p>
+                            <h3><i class="fa-solid fa-list-ol" style="color:var(--accent-gold)"></i> الترتيب النهائي للفرق</h3>
+                            <p>رتب الفرق الثمانية من الأول إلى الثامن</p>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number first">1</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number first">1</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">2</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">2</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">3</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">3</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">4</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">4</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">5</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">5</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">6</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">6</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">7</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">7</div>
+                            </div>
 
-                        <div class="team-rank-item">
-                            <span>
-                                <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
-                                <select class="team-rank-select">
-                                    <option value="" selected disabled>- اختر الفريق</option>
-                                    <option value="A">تل العاصور</option>
-                                    <option value="B">الفدائي</option>
-                                    <option value="C">راس بركة</option>
-                                    <option value="D">وادي النمر</option>
-                                    <option value="E">راس علي</option>
-                                    <option value="F">عيون الحرامية</option>
-                                    <option value="G">دوار الشهيد</option>
-                                    <option value="H">الحواكير</option>
-                                </select>
-                            </span>
-                            <div class="rank-number">8</div>
-                        </div>
+                            <div class="team-rank-item">
+                                <span>
+                                    <i class="fa-solid fa-bars" style="margin-left:6px;"></i>
+                                    <select class="team-rank-select">
+                                        <option value="" selected disabled>- اختر الفريق</option>
+                                        <option value="A">تل العاصور</option>
+                                        <option value="B">الفدائي</option>
+                                        <option value="C">راس بركة</option>
+                                        <option value="D">وادي النمر</option>
+                                        <option value="E">راس علي</option>
+                                        <option value="F">عيون الحرامية</option>
+                                        <option value="G">دوار الشهيد</option>
+                                        <option value="H">الحواكير</option>
+                                    </select>
+                                </span>
+                                <div class="rank-number">8</div>
+                            </div>
                     </div>
                 </div>
 
                 <!-- القسم الأيسر (توقع نتائج المباريات) -->
                 <div>
-                    <div class="sub-box">
-                        <h3 style="margin-bottom:12px;"><i class="fa-solid fa-futbol" style="color:var(--accent-gold)"></i> توقع نتائج المباريات</h3>
-
-                        <div class="match-row">
-                            <div class="team-side"><span>🛡️</span> <span>البدع</span></div>
-                            <div style="display:flex; align-items:center; gap:6px;">
-                                <input type="number" value="1" class="score-input">
-                                <span style="font-size:11px; color:var(--text-muted); font-weight:bold;">VS</span>
-                                <input type="number" value="1" class="score-input">
-                            </div>
-                            <div class="team-side left"><span>سلواد</span> <span>⚽</span></div>
+                    <div>
+                        <div class="sub-box">
+                            <h3 style="margin-bottom:12px;">
+                                توقع نتائج المباريات
+                            </h3>
+                            <div id="predictionMatches"></div>
                         </div>
-
-                        <div class="match-row">
-                            <div class="team-side"><span>🛡️</span> <span>الأنصار</span></div>
-                            <div style="display:flex; align-items:center; gap:6px;">
-                                <input type="number" value="1" class="score-input">
-                                <span style="font-size:11px; color:var(--text-muted); font-weight:bold;">VS</span>
-                                <input type="number" value="1" class="score-input">
-                            </div>
-                            <div class="team-side left"><span>شباب سلواد</span> <span>⚽</span></div>
-                        </div>
-
-                        <div class="match-row">
-                            <div class="team-side"><span>🛡️</span> <span>الصداق</span></div>
-                            <div style="display:flex; align-items:center; gap:6px;">
-                                <input type="number" value="1" class="score-input">
-                                <span style="font-size:11px; color:var(--text-muted); font-weight:bold;">VS</span>
-                                <input type="number" value="1" class="score-input">
-                            </div>
-                            <div class="team-side left"><span>الجيل</span> <span>⚽</span></div>
-                        </div>
-
-                        <div class="match-row">
-                            <div class="team-side"><span>🛡️</span> <span>الأهلي</span></div>
-                            <div style="display:flex; align-items:center; gap:6px;">
-                                <input type="number" value="1" class="score-input">
-                                <span style="font-size:11px; color:var(--text-muted); font-weight:bold;">VS</span>
-                                <input type="number" value="1" class="score-input">
-                            </div>
-                            <div class="team-side left"><span>البرموك</span> <span>⚽</span></div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -855,17 +834,167 @@
 </body>
 </html>
 
+
 <script>
-    document.querySelectorAll('.team-rank-item').forEach(item => {
-        item.addEventListener('click', function (e) {
-            const select = this.querySelector('.team-rank-select');
+    document.querySelectorAll('.team-rank-item').forEach(row => {
+        const select = row.querySelector('.team-rank-select');
 
-            if (select && e.target !== select) {
-                select.focus();
+        row.addEventListener('click', function (e) {
+            if (e.target.closest('select')) return;
 
-                // فتح القائمة عند الضغط على أي مكان في السجل
+            select.focus();
+
+            // فتح قائمة الخيارات عند الضغط على أي مكان في الصف
+            if (typeof select.showPicker === 'function') {
+                select.showPicker();
+            } else {
                 select.click();
             }
         });
     });
+
+    const predictionRounds = {
+        // الجولة الأولى
+        1: [
+            ['تل العاصور', 'الحواكير'],
+            ['الفدائي', 'دوار الشهيد'],
+            ['راس بركة', 'عيون الحرامية'],
+            ['وادي النمر', 'راس علي']
+        ],
+
+        // الجولة الثانية
+        2: [
+            ['تل العاصور', 'دوار الشهيد'],
+            ['الحواكير', 'عيون الحرامية'],
+            ['الفدائي', 'راس علي'],
+            ['راس بركة', 'وادي النمر']
+        ],
+
+        // الجولة الثالثة
+        3: [
+            ['تل العاصور', 'عيون الحرامية'],
+            ['دوار الشهيد', 'راس علي'],
+            ['الحواكير', 'وادي النمر'],
+            ['الفدائي', 'راس بركة']
+        ],
+
+        // الجولة الرابعة
+        4: [
+            ['تل العاصور', 'راس علي'],
+            ['عيون الحرامية', 'وادي النمر'],
+            ['دوار الشهيد', 'راس بركة'],
+            ['الحواكير', 'الفدائي']
+        ],
+
+        // الجولة الخامسة
+        5: [
+            ['تل العاصور', 'وادي النمر'],
+            ['راس علي', 'راس بركة'],
+            ['عيون الحرامية', 'الفدائي'],
+            ['دوار الشهيد', 'الحواكير']
+        ],
+
+        // الجولة السادسة
+        6: [
+            ['تل العاصور', 'راس بركة'],
+            ['وادي النمر', 'الفدائي'],
+            ['راس علي', 'الحواكير'],
+            ['عيون الحرامية', 'دوار الشهيد']
+        ],
+
+        // الجولة السابعة
+        7: [
+            ['تل العاصور', 'الفدائي'],
+            ['راس بركة', 'الحواكير'],
+            ['وادي النمر', 'دوار الشهيد'],
+            ['راس علي', 'عيون الحرامية']
+        ]
+    };
+  
+    const predictionRoundSelect = document.getElementById('predictionRound');
+    const predictionMatchesContainer = document.getElementById('predictionMatches');
+
+    // الاحتفاظ بالتوقعات عند التنقل بين الجولات
+    const savedPredictions = {};
+
+    function renderPredictionMatches() {
+        const round = predictionRoundSelect.value;
+        const matches = predictionRounds[round] || [];
+
+        predictionMatchesContainer.innerHTML = '';
+
+        if (matches.length === 0) {
+            predictionMatchesContainer.innerHTML =
+                '<p style="text-align:center;color:var(--text-muted);padding:15px;">' +
+                'لم تتم إضافة مواجهات هذه الجولة بعد.' +
+                '</p>';
+            return;
+        }
+
+        matches.forEach((match, index) => {
+            const [team1, team2] = match;
+            const key = `${round}-${index}`;
+
+            const row = document.createElement('div');
+            row.className = 'match-row';
+
+            const team1Side = document.createElement('div');
+            team1Side.className = 'team-side';
+            team1Side.innerHTML = '<span>🛡️</span>';
+            const team1Name = document.createElement('span');
+            team1Name.textContent = team1;
+            team1Side.appendChild(team1Name);
+
+            const scoreArea = document.createElement('div');
+            scoreArea.style.cssText = 'display:flex;align-items:center;gap:6px;';
+
+            const score1 = document.createElement('input');
+            score1.type = 'number';
+            score1.min = '0';
+            score1.className = 'score-input';
+            score1.value = savedPredictions[key]?.score1 ?? '';
+
+            const vs = document.createElement('span');
+            vs.textContent = 'VS';
+            vs.style.cssText =
+                'font-size:11px;color:var(--text-muted);font-weight:bold;';
+
+            const score2 = document.createElement('input');
+            score2.type = 'number';
+            score2.min = '0';
+            score2.className = 'score-input';
+            score2.value = savedPredictions[key]?.score2 ?? '';
+
+            scoreArea.append(score1, vs, score2);
+
+            const team2Side = document.createElement('div');
+            team2Side.className = 'team-side left';
+
+            const team2Name = document.createElement('span');
+            team2Name.textContent = team2;
+
+            const ball = document.createElement('span');
+            ball.textContent = '⚽';
+
+            team2Side.append(team2Name, ball);
+
+            function savePrediction() {
+                savedPredictions[key] = {
+                    score1: score1.value,
+                    score2: score2.value
+                };
+            }
+
+            score1.addEventListener('input', savePrediction);
+            score2.addEventListener('input', savePrediction);
+
+            row.append(team1Side, scoreArea, team2Side);
+            predictionMatchesContainer.appendChild(row);
+        });
+    }
+
+    predictionRoundSelect.addEventListener('change', renderPredictionMatches);
+    renderPredictionMatches();
+
 </script>
+
